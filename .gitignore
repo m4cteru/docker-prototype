@@ -1,0 +1,10 @@
+.vagrant
+
+.DS_Store
+*/log/**/*
+*/tmp/**/*
+*/vendor/bundle/*
+!*/vendor/bundle/cache/
+.sass-cache/*
+*/db/*.db
+.*.sw*
