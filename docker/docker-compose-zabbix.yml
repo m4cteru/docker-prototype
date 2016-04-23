@@ -1,0 +1,15 @@
+mariadb:
+  image: mariadb
+  container_name: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: ''
+    MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+  ports:
+    - 3306:3306
+
+zabbix:
+  image: zabbix-server
+  container_name: zabbix-server
+  links:
+    - mariadb
+

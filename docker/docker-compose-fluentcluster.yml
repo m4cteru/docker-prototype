@@ -1,0 +1,20 @@
+td-agent-slave01:
+  image: td-agent
+  container_name: td-agent-slave01
+  volumes:
+    - ./td-agent/slave:/etc/td-agent
+
+td-agent-slave02:
+  image: td-agent
+  container_name: td-agent-slave02
+  volumes:
+    - ./td-agent/slave:/etc/td-agent
+
+td-agent-master:
+  image: td-agent
+  container_name: td-agent-master 
+  volumes:
+    - ./td-agent/master:/etc/td-agent
+  links:
+    - td-agent-slave01
+    - td-agent-slave02
